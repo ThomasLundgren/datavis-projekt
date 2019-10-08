@@ -2,4 +2,3 @@
 
 // example ruleset is: rulesets/internal/all-java.xml
 // example output formats: text, xml, html
-// documentation: https://pmd.github.io/latest/
