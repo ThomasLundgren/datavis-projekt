@@ -1,11 +1,21 @@
-.\pmd.bat -d [path to source code] -f [output format] -R [ruleset]
-
+// -- PMD --
 // example ruleset is: rulesets/internal/all-java.xml
 // example output formats: text, xml, html
 // documentation: https://pmd.github.io/latest/
 
-java -jar [path to javacg-0.1-SNAPSHOT-static.jar] [jar file to analyze]
+.\pmd.bat -d [path to source code] -f [output format] -R [ruleset]
 
+// -- JCallGraph --
 // built with maven
 // produces very large datasets with some irrelevant data for our purposes
 // documentation: https://github.com/gousiosg/java-callgraph
+
+java -jar [path to javacg-0.1-SNAPSHOT-static.jar] [jar file to analyze]
+
+// -- SpotBugs --
+// navigate to \datavis-projekt\static-analysis-tools\spotbugs-3.1.12\lib
+// "bug-sensitivity" can be set with CL-args -low/-medium/-high
+// filters can be used with CL-arg -include filterFile.xml
+// documentation: https://spotbugs.readthedocs.io/en/stable/running.html
+
+java -jar .\spotbugs.jar .\random-jar-to-test-javacg.jar
