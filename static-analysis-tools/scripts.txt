@@ -1,0 +1,4 @@
+.\pmd.bat -d [path to source code] -f [output format] -R [ruleset] > output.txt
+
+// example ruleset is: rulesets/internal/all-java.xml
+// example output formats: text, xml, html
