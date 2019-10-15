@@ -1,0 +1,26 @@
+https://github.com/cgag/loc
+
+För att använda loc.exe:
+
+1. Öppna cmd i den mapp loc.exe ligger i.
+
+loc [path] > exempel.txt
+
+för att skapa/skriva output till en fil som heter exempel.txt
+
+alt.
+
+loc [path] > exempel.txt
+
+för att skapa/skriva output till en fil som heter exempel.txt för den mapp som loc.exe ligger i.
+
+
+
+Ex1:
+
+loc C:\Users\Niklas\Desktop\Datavis_projekt > exempel.txt
+
+Ex2:
+
+loc > exempel.txt
+
