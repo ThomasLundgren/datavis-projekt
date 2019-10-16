@@ -1,0 +1,2 @@
+echo -e "commit#\tname\tday\tmonth\tdate\ttime\tyear" > output.tsv
+git log --date=local --pretty=format:"%h%x09%an%x09%ad%x09%s" >> output.tsv
