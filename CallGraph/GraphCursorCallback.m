@@ -21,23 +21,23 @@ function output_txt = GraphCursorCallback(obj, event_obj, NodeProperties)
      % Set color & size of selected node
      highlight(h, ind, 'NodeColor', "g", "MarkerSize", nodeSelectedSize);
      
-     % Find inedges of node
+     % Find predecessors of node
+      pre = predecessors(G, ind);
+      for i = 1 : size(pre, 1)
+           highlight(h, pre(i), 'NodeColor', "y", "MarkerSize", nodeNeighbourSize);
+           labelnode(h, pre(i), G.Nodes.Name(pre(i)));
+      end
+     
+     % Find successors of node
       succ = successors(G, ind);
       for i = 1 : size(succ, 1)
            highlight(h, succ(i), 'NodeColor', "b", "MarkerSize", nodeNeighbourSize);
            labelnode(h, succ(i), G.Nodes.Name(succ(i)));
       end
-     
-     % Find outedges of node
-      pre = predecessors(G, ind);
-      for i = 1 : size(pre, 1)
-           highlight(h, pre(i), 'NodeColor', "y", "MarkerSize", nodeNeighbourSize);
-           labelnode(h, pre(i), G.Nodes.Name(out(i)));
-      end
 
     output_txt = [G.Nodes.Name(ind)
-                  'Number of incoming calls: ' num2str(size(in, 1))
-                  'Number of outgoing calls: ' num2str(size(out, 1))];
+                  'Number of incoming calls: ' num2str(size(pre, 1))
+                  'Number of outgoing calls: ' num2str(size(succ, 1))];
 
 
 end
